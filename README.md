@@ -15,7 +15,7 @@ folder and contains its own `README` describing:
 
 | Folder | Course | What to expect |
 | --- | --- | --- |
-| `Information-Theory/` | Information Theory | entropy, source coding, dictionary methods (LZ77), lossless vs. lossy compression, lecture notes + reference book, a C++ encoder/demo |
+| `Information-Theory/` | Information Theory | entropy, source coding, dictionary methods (LZ77), lossless vs. lossy compression, lecture notes + reference book, C++ and Rust implementations/demos |
 
 ## Layout
 
@@ -32,16 +32,27 @@ CS-Department-Guide/
 
 1. Read the course `README` first to get the big picture and know what to expect.
 2. Go through the `theory/` material of that course.
-3. Practice with the code/demos; every C++ lab builds the same way (see below).
+3. Practice with the C++ or Rust demos (build commands below).
 
 ## Building the C++ labs
 
-Every course folder with code uses CMake and keeps its build artifacts inside
-itself (ignored by git):
+C++ code lives in each course's `cpp/` folder and builds with CMake:
 
 ```sh
-cmake -S <Course>/ -B <Course>/build
-cmake --build <Course>/build
+cmake -S <Course>/cpp -B <Course>/cpp/build
+cmake --build <Course>/cpp/build
 ```
 
-Binaries land in `<Course>/bin`. See the course `README` for how to run each demo.
+Binaries land in `<Course>/cpp/bin` (possibly in a configuration subfolder).
+Build artifacts are ignored by git. See the course `README` for demo details.
+
+## Running the Rust labs
+
+Rust code lives in each course's `rust/` folder. Install Rust 1.85 or newer, then run:
+
+```sh
+cargo run --manifest-path <Course>/rust/Cargo.toml
+```
+
+Cargo compiles the code into `rust/target/`, which is ignored by git.
+See the course `README` for demo details.

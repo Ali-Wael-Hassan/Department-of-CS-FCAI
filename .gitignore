@@ -14,3 +14,6 @@ cmake-build-*/
 
 # Binary output
 bin/
+
+# Rust build artifacts
+target/
