@@ -15,5 +15,11 @@ cmake-build-*/
 # Binary output
 bin/
 
+# .NET build output
+obj/
+
 # Rust build artifacts
 target/
+
+# VS Code artifacts
+.vscode/

@@ -15,7 +15,7 @@ folder and contains its own `README` describing:
 
 | Folder | Course | What to expect |
 | --- | --- | --- |
-| `Information-Theory/` | Information Theory | entropy, source coding, dictionary methods (LZ77), lossless vs. lossy compression, lecture notes + reference book, C++ and Rust implementations/demos |
+| `Information-Theory/` | Information Theory | entropy, source coding, dictionary methods (LZ77), lossless vs. lossy compression, lecture notes + reference book, C#, C++, and Rust implementations/demos |
 
 ## Layout
 
@@ -32,7 +32,18 @@ CS-Department-Guide/
 
 1. Read the course `README` first to get the big picture and know what to expect.
 2. Go through the `theory/` material of that course.
-3. Practice with the C++ or Rust demos (build commands below).
+3. Practice with the C#, C++, or Rust demos (build commands below).
+
+## Building and running the C# labs
+
+C# code lives in each course's `c#/` folder and builds with the .NET SDK:
+
+```sh
+dotnet run --project <Course>/c#
+```
+
+`dotnet` compiles the code into `c#/bin` and `c#/obj`, which are ignored by git.
+See the course `README` for demo details.
 
 ## Building the C++ labs
 

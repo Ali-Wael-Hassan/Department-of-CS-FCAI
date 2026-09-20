@@ -23,6 +23,7 @@ algorithms).
   - `cpp/src/` — C++ implementations + an interactive demo
   - `cpp/CMakeLists.txt` — C++ build configuration
   - `rust/` — simple Rust implementations and a sample-text demo (see [Rust guide](rust/README.md))
+  - `c#/` — a C# LZ77 codec and interactive CLI (see below)
 
 ## How to study
 
@@ -70,3 +71,21 @@ cargo run --manifest-path rust/Cargo.toml
 
 The demo encodes sample bytes, decodes them, and prints the tokens and token-count
 statistics. The [Rust guide](rust/README.md) explains the files and how to add an algorithm.
+
+## Building and running the C# demo
+
+Install the .NET SDK (the project targets `.NET 10`), then run from
+`Information-Theory/`:
+
+```sh
+dotnet run --project c#
+```
+
+The interactive `CodecCLI` is populated by auto-discovering every `IDictCodec` in
+the assembly (currently `LZ77`) and offers these commands:
+
+1. **list** — show the available codecs.
+2. **compress** — pick a codec, an input file, an output path, and the max search /
+   lookahead sizes; it packs the produced LZ77 tuples into a bit-packed `.lz` file.
+3. **decompress** — pick a codec and read a compressed file back into the original bytes.
+4. **quit** — exit.
