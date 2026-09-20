@@ -22,6 +22,7 @@ algorithms).
   - `cpp/include/` — C++ headers, organized by topic (e.g. `lossless/dictionary/`)
   - `cpp/src/` — C++ implementations + an interactive demo
   - `cpp/CMakeLists.txt` — C++ build configuration
+  - `js/` — JavaScript (Node) implementations and demo/tests (see [JS guide](js/README.md))
   - `rust/` — simple Rust implementations and a sample-text demo (see [Rust guide](rust/README.md))
   - `c#/` — a C# LZ77 codec and interactive CLI (see below)
 
@@ -59,6 +60,21 @@ cpp/bin/lz77_demo
 # lookahead bits (8): 8
 # choose 2 to decompress sample.lz77 back into a new file
 ```
+
+## Running the JavaScript demo
+
+Install Node 18 or newer (only Node built-ins are used), then run from
+`Information-Theory/js`:
+
+```sh
+npm start                   # runs the demo on a default sample string
+npm start -- "my string"    # runs the demo on a string you supply
+npm test                    # runs the unit tests in test/
+```
+
+The demo encodes the input into LZ77 tokens, decodes them back, and prints the
+token list plus a size benchmark. The [JS guide](js/README.md) explains the
+files and how to add an algorithm.
 
 ## Running the Rust demo
 
