@@ -1,0 +1,13 @@
+{
+  "name": "information-theory-js",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Information Theory labs in JavaScript (LZ77, Huffman, etc.).",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/lz77.demo.js",
+    "test": "node --test"
+  },
+  "devDependencies": {}
+}

@@ -15,7 +15,7 @@ folder and contains its own `README` describing:
 
 | Folder | Course | What to expect |
 | --- | --- | --- |
-| `Information-Theory/` | Information Theory | entropy, source coding, dictionary methods (LZ77), lossless vs. lossy compression, lecture notes + reference book, C#, C++, and Rust implementations/demos |
+| `Information-Theory/` | Information Theory | entropy, source coding, dictionary methods (LZ77), lossless vs. lossy compression, lecture notes + reference book, C#, C++, JavaScript and Rust implementations/demos |
 
 ## Layout
 
@@ -32,7 +32,7 @@ CS-Department-Guide/
 
 1. Read the course `README` first to get the big picture and know what to expect.
 2. Go through the `theory/` material of that course.
-3. Practice with the C#, C++, or Rust demos (build commands below).
+3. Practice with the C#, C++, JavaScript or Rust demos (commands below).
 
 ## Building and running the C# labs
 
@@ -67,3 +67,16 @@ cargo run --manifest-path <Course>/rust/Cargo.toml
 
 Cargo compiles the code into `rust/target/`, which is ignored by git.
 See the course `README` for demo details.
+
+## Running the JavaScript labs
+
+JS code lives in each course's `js/` folder and uses only Node.js built-ins (no
+third-party dependencies). Install Node 18 or newer, then run from the course folder:
+
+```sh
+npm start                  # runs the demo
+npm start -- "my string"   # run the demo on a specific string
+npm test                   # runs the unit tests in test/
+```
+
+See the course `README` (and `js/README.md`) for demo details.

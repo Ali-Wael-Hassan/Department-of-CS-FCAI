@@ -23,3 +23,6 @@ target/
 
 # VS Code artifacts
 .vscode/
+
+# JavaScript / Node modules
+node_modules/
