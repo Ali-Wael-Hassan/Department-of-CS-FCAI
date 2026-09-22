@@ -16,6 +16,7 @@ folder and contains its own `README` describing:
 | Folder | Course | What to expect |
 | --- | --- | --- |
 | `Information-Theory/` | Information Theory | entropy, source coding, dictionary methods (LZ77), lossless vs. lossy compression, lecture notes + reference book, C#, C++, JavaScript and Rust implementations/demos |
+| `Advanced-Datastructures/` | Advanced Data Structures | hashing and hash tables (collisions, probing, growth), lecture notes + reference book, C++ implementations/demos |
 
 ## Layout
 
