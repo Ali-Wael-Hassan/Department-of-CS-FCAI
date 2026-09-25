@@ -1,5 +1,9 @@
 # Lecture 1 — Introduction to LZ77
 
+- Course guide: [Information Theory](../../../README.md)
+- Next stop in the code: [C++ demo](../../../cpp/) · [C# guide](../../../c%23/README.md) ·
+  [JS guide](../../../js/README.md) · [Rust guide](../../../rust/README.md)
+
 ## What this lecture covers
 
 - What lossless dictionary/list compression is
@@ -11,8 +15,7 @@
 
 | File | What it is |
 | --- | --- |
-| `Lect-1IntroLZ77.pdf` | The lecture slides for this session |
-| `LZ77-from-book.pdf` | The relevant chapter from the course reference book |
+| [`LZ77-from-book.pdf`](LZ77-from-book.pdf) | The relevant chapter from the course reference book ([*Introduction to Data Compression*](../../Reference/README.md)) |
 
 ## References
 
@@ -48,14 +51,32 @@ A hands-on tutorial with concrete examples:
 ## Suggested study flow
 
 1. Watch the video (reference 1) to see what LZ77 does.
-2. Skim the lecture slides for the terminology used in class.
+2. Skim the book chapter above for the terminology used in class.
 3. Read the Springer entry (reference 2) for the precise definitions.
-4. Follow the blog example (reference 3), then try the repo demo:
+4. Follow the blog example (reference 3), then try a demo. From the repository
+   root:
 
 ```sh
-cmake --build Information-Theory/build
-Information-Theory/bin/lz77_demo
+cmake -S Information-Theory/cpp -B Information-Theory/cpp/build
+cmake --build Information-Theory/cpp/build
+Information-Theory/cpp/bin/lz77_demo
+```
+
+Prefer another language? The same algorithm is implemented in
+[C#](../../../c%23/README.md), [JavaScript](../../../js/README.md), and
+[Rust](../../../rust/README.md):
+
+```sh
+dotnet run --project Information-Theory/c#      # C# CLI: list | compress | decompress | quit
+cd Information-Theory/js && npm start           # JS demo on a sample string
+cargo run --manifest-path Information-Theory/rust/Cargo.toml   # Rust demo
 ```
 
 Experiment with a repetitive text file (e.g. a long line of `abababab...`) and
 observe how one tuple compresses a whole repeated run.
+
+## Navigation
+
+- [Information Theory](../../../README.md) — course guide
+- [Reference book](../../Reference/README.md) — *Introduction to Data Compression*
+- Other lectures: [`theory/Lectures/`](../)

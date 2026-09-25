@@ -1,7 +1,7 @@
 # Information Theory — Course Guide
 
 Part of the CS department (FCAI, Cairo University) study guides at the
-repository root (`CS-Department-Guide`).
+[repository root](../README.md).
 
 ## What to expect
 
@@ -16,20 +16,24 @@ algorithms).
   - Lossy compression: rate–distortion trade-off, information allowed to be lost
   - Measures: entropy, information content, coding efficiency, redundancy
 - **Theory material**
-  - `theory/Lectures/` — lecture notes (e.g. `Lecture1/`)
-  - `theory/Reference/` — the reference book used for the course
-- **Code**
-  - `cpp/include/` — C++ headers, organized by topic (e.g. `lossless/dictionary/`)
-  - `cpp/src/` — C++ implementations + an interactive demo
-  - `cpp/CMakeLists.txt` — C++ build configuration
-  - `js/` — JavaScript (Node) implementations and demo/tests (see [JS guide](js/README.md))
-  - `rust/` — simple Rust implementations and a sample-text demo (see [Rust guide](rust/README.md))
-  - `c#/` — a C# LZ77 codec and interactive CLI (see below)
+  - [`theory/Lectures/`](theory/Lectures/Lecture1/README.md) — lecture notes
+    (currently [Lecture 1 — Introduction to LZ77](theory/Lectures/Lecture1/README.md))
+  - [`theory/Reference/`](theory/Reference/README.md) — the reference book used
+    for the course
+- **Code** — the same algorithm in four languages, each with its own guide
+
+| Language | Guide | Build |
+| --- | --- | --- |
+| C++ | [`cpp/`](cpp/) ([CMakeLists.txt](cpp/CMakeLists.txt)) | CMake, C++17 |
+| C# | [`c#/`](c%23/README.md) ([c#.csproj](c%23/c%23.csproj)) | .NET SDK (targets `net10.0`) |
+| JavaScript | [`js/`](js/README.md) ([package.json](js/package.json)) | Node 18+, no dependencies |
+| Rust | [`rust/`](rust/README.md) ([Cargo.toml](rust/Cargo.toml)) | Cargo, edition 2024 |
 
 ## How to study
 
-1. Read the lecture notes in `theory/Lectures/` in order.
-2. Cross-check with the reference in `theory/Reference/`.
+1. Read the lecture notes in `theory/Lectures/` in order, starting with
+   [Lecture 1 — Introduction to LZ77](theory/Lectures/Lecture1/README.md).
+2. Cross-check with the reference in [`theory/Reference/`](theory/Reference/README.md).
 3. Implement and experiment with the code demos (see below).
 
 ## Building and running the C++ demo
@@ -60,6 +64,16 @@ cpp/bin/lz77_demo
 # lookahead bits (8): 8
 # choose 2 to decompress sample.lz77 back into a new file
 ```
+
+### C++ files
+
+| File | What it is |
+| --- | --- |
+| [`cpp/include/lossless/dictionary/LZ77.h`](cpp/include/lossless/dictionary/LZ77.h) | the LZ77 encoder / decoder interface |
+| [`cpp/include/lossless/dictionary/LZTuple.h`](cpp/include/lossless/dictionary/LZTuple.h) | the `(distance, length, next)` triplet |
+| [`cpp/src/lossless/dictionary/LZ77.cpp`](cpp/src/lossless/dictionary/LZ77.cpp) | the LZ77 implementation |
+| [`cpp/src/LZ77Demo.cpp`](cpp/src/LZ77Demo.cpp) | the interactive demo |
+| [`cpp/CMakeLists.txt`](cpp/CMakeLists.txt) | build configuration (binary name `lz77_demo`) |
 
 ## Running the JavaScript demo
 
@@ -105,3 +119,30 @@ the assembly (currently `LZ77`) and offers these commands:
    lookahead sizes; it packs the produced LZ77 tuples into a bit-packed `.lz` file.
 3. **decompress** — pick a codec and read a compressed file back into the original bytes.
 4. **quit** — exit.
+
+The [C# guide](c%23/README.md) lists the source files and the same commands.
+
+## Layout
+
+```text
+Information-Theory/
+├── README.md                                    ← this file
+├── theory/
+│   ├── Lectures/Lecture1/README.md              ← [Lecture 1 — Introduction to LZ77](theory/Lectures/Lecture1/README.md)
+│   │   └── LZ77-from-book.pdf                   ← the book chapter for this lecture
+│   └── Reference/README.md                      ← [theory/Reference/](theory/Reference/README.md)
+│       └── Introduction-to-data-compression.pdf ← the course reference book
+├── c#/                                         ← [C# guide](c%23/README.md)
+├── cpp/                                        ← C++ LZ77 (CMake → cpp/bin/lz77_demo)
+├── js/                                         ← [JavaScript guide](js/README.md)
+└── rust/                                       ← [Rust guide](rust/README.md)
+```
+
+Build outputs (`bin/`, `build/`, `obj/`, `target/`, `*.exe`) are ignored by git.
+
+## Navigation
+
+- [Repository root](../README.md)
+- [Lecture 1 — Introduction to LZ77](theory/Lectures/Lecture1/README.md)
+- [Reference book](theory/Reference/README.md)
+- [C++ demo](cpp/) · [C# guide](c%23/README.md) · [JS guide](js/README.md) · [Rust guide](rust/README.md)

@@ -1,5 +1,9 @@
 # Lecture 1 — Hash Tables
 
+- Course guide: [Advanced Datastructures](../../../README.md)
+- Next stop in the code: [C++ hash table](../../../cpp/) and its
+  [demo](../../../cpp/src/DuckHashtableDemo.cpp)
+
 ## What this lecture covers
 
 - Hash functions and how they map keys to slots
@@ -44,7 +48,7 @@ matter.
 [**String Hashing using Polynomial Rolling Hash — GeeksforGeeks DSA**](https://www.geeksforgeeks.org/dsa/string-hashing-using-polynomial-rolling-hash-function/)
 
 The polynomial rolling hash used by the `duck_hash<std::string>` specialization
-in this repo's demo.
+in [`DuckHash.h`](../../../cpp/include/DuckHash.h) in this repo's demo.
 
 [**xxHash — Stephan Brumme**](https://create.stephan-brumme.com/xxhash/)
 
@@ -64,9 +68,20 @@ A walk-through of the xxHash algorithm as used in a real project (Ceph).
    - insert a few keys, observe the load factor and probing
    - trigger growth past the 80% load threshold
    - remove an element and watch the displaced re-insertions
-6. Then run the demo:
+6. Then run the demo. From the repository root:
 
 ```sh
-cmake --build Advanced-Datastructures/build
-Advanced-Datastructures/bin/advanced_datastructures_demo
+cmake -S Advanced-Datastructures/cpp -B Advanced-Datastructures/cpp/build
+cmake --build Advanced-Datastructures/cpp/build
+Advanced-Datastructures/cpp/bin/advanced_datastructures_demo
 ```
+
+The class lives in [`DuckHashtable.h`](../../../cpp/include/DuckHashtable.h) with
+its implementation in [`Hashtable.tpp`](../../../cpp/src/Hashtable.tpp), and the
+hash functions in [`DuckHash.h`](../../../cpp/include/DuckHash.h).
+
+## Navigation
+
+- [Advanced Datastructures](../../../README.md) — course guide
+- [Reference material](../../Reference/README.md)
+- Other lectures: [`theory/Lectures/`](../)
